@@ -1,0 +1,19 @@
+{
+  "extension.displayName": "Unicode Inspector 中文字符检查",
+  "extension.description": "检测易混淆、不可见和异常 Unicode 字符，兼顾中文场景；离线运行，支持中英文界面。",
+  "virtualWorkspaces.description": "仅检测文件、未保存文档、远程文件与笔记本代码单元。",
+  "command.listIssues": "问题列表",
+  "command.nextIssue": "下一处异常",
+  "command.explainCharacter": "解释光标处字符",
+  "command.rescan": "重新检测",
+  "command.openSettings": "设置",
+  "configuration.title": "Unicode Inspector 中文字符检查",
+  "configuration.enabled": "启用自动 Unicode 检测。",
+  "configuration.allowChinesePunctuation": "允许常用中文标点；关闭后可检查代码中的全角标点。",
+  "configuration.allowCommonSymbols": "允许常用单位、数学和货币符号。",
+  "configuration.allowPinyin": "允许带声调拼音及合法上下文中的组合声调。",
+  "configuration.allowedCharacters": "额外允许的字符，直接输入字符，不是正则。",
+  "configuration.allowedCodepointRanges": "额外允许的十六进制范围，例如 0400-04FF；这会放行范围内所有字符。",
+  "configuration.debounceMs": "停止输入后延迟检测的毫秒数。",
+  "configuration.maxFileCharacters": "单文件 UTF-16 单元扫描上限；超限会明确提示未检测。0 表示不限。"
+}

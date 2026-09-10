@@ -1,0 +1,19 @@
+{
+  "extension.displayName": "Unicode Inspector",
+  "extension.description": "Spot confusable, invisible, and unusual Unicode characters with Chinese-aware rules. Offline, with English and Chinese interfaces.",
+  "virtualWorkspaces.description": "Scans files, untitled documents, remote files, and notebook code cells only.",
+  "command.listIssues": "List Issues",
+  "command.nextIssue": "Next Issue",
+  "command.explainCharacter": "Explain Character at Cursor",
+  "command.rescan": "Rescan Document",
+  "command.openSettings": "Open Settings",
+  "configuration.title": "Unicode Inspector",
+  "configuration.enabled": "Enable automatic Unicode inspection.",
+  "configuration.allowChinesePunctuation": "Allow common Chinese punctuation. Disable to flag fullwidth punctuation in code.",
+  "configuration.allowCommonSymbols": "Allow common unit, math, and currency symbols.",
+  "configuration.allowPinyin": "Allow accented pinyin and combining tone marks in supported pinyin contexts.",
+  "configuration.allowedCharacters": "Additional characters to allow. Enter literal characters, not a regular expression.",
+  "configuration.allowedCodepointRanges": "Additional hexadecimal ranges to allow, such as 0400-04FF. All characters in these ranges are allowed, including confusables and controls.",
+  "configuration.debounceMs": "Delay in milliseconds after editing before scanning.",
+  "configuration.maxFileCharacters": "Maximum document length in UTF-16 code units. Larger documents are explicitly marked as not scanned. Set to 0 for no limit."
+}

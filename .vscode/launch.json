@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Extension (English)",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": ["--extensionDevelopmentPath=${workspaceFolder}/extension", "--locale=en"],
+      "outFiles": ["${workspaceFolder}/extension/src/**/*.js"]
+    },
+    {
+      "name": "Run Extension (简体中文)",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": ["--extensionDevelopmentPath=${workspaceFolder}/extension", "--locale=zh-cn"],
+      "outFiles": ["${workspaceFolder}/extension/src/**/*.js"]
+    }
+  ]
+}

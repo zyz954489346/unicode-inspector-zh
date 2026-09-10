@@ -1,0 +1,159 @@
+{
+  "name": "unicode-inspector-zh",
+  "displayName": "%extension.displayName%",
+  "description": "%extension.description%",
+  "version": "1.0.1",
+  "publisher": "local-tools",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Linters",
+    "Other"
+  ],
+  "keywords": [
+    "unicode",
+    "chinese",
+    "confusables",
+    "homoglyph",
+    "invisible",
+    "fullwidth",
+    "中文"
+  ],
+  "license": "MIT",
+  "main": "./src/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "extensionKind": [
+    "workspace"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": {
+      "supported": false,
+      "description": "%virtualWorkspaces.description%"
+    }
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "unicodeInspector.listIssues",
+        "title": "%command.listIssues%",
+        "category": "Unicode Inspector"
+      },
+      {
+        "command": "unicodeInspector.nextIssue",
+        "title": "%command.nextIssue%",
+        "category": "Unicode Inspector"
+      },
+      {
+        "command": "unicodeInspector.explainCharacter",
+        "title": "%command.explainCharacter%",
+        "category": "Unicode Inspector"
+      },
+      {
+        "command": "unicodeInspector.rescan",
+        "title": "%command.rescan%",
+        "category": "Unicode Inspector"
+      },
+      {
+        "command": "unicodeInspector.openSettings",
+        "title": "%command.openSettings%",
+        "category": "Unicode Inspector"
+      }
+    ],
+    "configuration": {
+      "title": "%configuration.title%",
+      "properties": {
+        "unicodeInspector.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "%configuration.enabled%",
+          "scope": "resource"
+        },
+        "unicodeInspector.allowChinesePunctuation": {
+          "type": "boolean",
+          "default": true,
+          "description": "%configuration.allowChinesePunctuation%",
+          "scope": "resource"
+        },
+        "unicodeInspector.allowCommonSymbols": {
+          "type": "boolean",
+          "default": true,
+          "description": "%configuration.allowCommonSymbols%",
+          "scope": "resource"
+        },
+        "unicodeInspector.allowPinyin": {
+          "type": "boolean",
+          "default": true,
+          "description": "%configuration.allowPinyin%",
+          "scope": "resource"
+        },
+        "unicodeInspector.allowedCharacters": {
+          "type": "string",
+          "default": "",
+          "description": "%configuration.allowedCharacters%",
+          "scope": "resource"
+        },
+        "unicodeInspector.allowedCodepointRanges": {
+          "type": "array",
+          "default": [],
+          "description": "%configuration.allowedCodepointRanges%",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:U\\+)?[0-9A-Fa-f]+-(?:U\\+)?[0-9A-Fa-f]+$"
+          },
+          "scope": "resource"
+        },
+        "unicodeInspector.debounceMs": {
+          "type": "integer",
+          "default": 350,
+          "description": "%configuration.debounceMs%",
+          "minimum": 0,
+          "maximum": 10000,
+          "scope": "resource"
+        },
+        "unicodeInspector.maxFileCharacters": {
+          "type": "integer",
+          "default": 5000000,
+          "description": "%configuration.maxFileCharacters%",
+          "minimum": 0,
+          "scope": "resource"
+        }
+      }
+    },
+    "menus": {
+      "editor/context": [
+        {
+          "command": "unicodeInspector.explainCharacter",
+          "group": "unicodeInspector"
+        },
+        {
+          "command": "unicodeInspector.listIssues",
+          "group": "unicodeInspector"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node --check src/core.js && node --check src/extension.js && node --check src/i18n.js && npm test",
+    "vscode:prepublish": "npm run check",
+    "package": "vsce package --no-dependencies --allow-missing-repository",
+    "check:release": "node scripts/check-release.js",
+    "package:release": "npm run check:release && npm run package"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "3.9.2"
+  },
+  "l10n": "./l10n",
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#12243A",
+    "theme": "dark"
+  },
+  "pricing": "Free"
+}

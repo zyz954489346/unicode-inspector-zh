@@ -1,0 +1,13 @@
+.vscode/**
+.github/**
+test/**
+scripts/**
+node_modules/**
+package-lock.json
+DEVELOPMENT.md
+PUBLISHING.md
+.vscodeignore
+.gitignore
+**/*.vsix
+**/.DS_Store
+media/icon.svg
